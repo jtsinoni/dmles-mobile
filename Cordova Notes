@@ -1,0 +1,49 @@
+/Users/johntsinonis/Data/Work/dmles-mobile
+
+Install Cordova:
+=================
+npm install -g cordova
+
+Create Project:
+===============
+cordova create dmles-mobile mil.jmlfdc.dmles.mobile DmlesMobile
+
+Add Platforms:
+==============
+All subsequent commands need to be run within the project's directory, or any subdirectories:
+
+$ cd dmles-mobile
+Add the platforms that you want to target your app. We will add the 'ios' and 'android' platform and ensure they get saved to config.xml:
+
+$ cordova platform add ios --save
+$ cordova platform add android --save
+
+To check your current set of platforms:
+=======================================
+$ cordova platform ls
+
+Build the App
+==============
+$ cordova build          // build all
+$ cordova build ios      // build for ios only
+$ cordova build andoid   // build for android only
+
+Test the App
+============	
+$ cordova emulate android  // use emulator
+$ cordova emulate ios  // use emulator
+
+$ cordova run android  // test app directly
+
+Plugman
+========
+Is a tool used to install plugins outside of the Cordova or PhoneGap CLI 
+$ npm install -g plugman
+
+Plugins:
+========
+$ cordova plugin add cordova-plugin-console
+
+References:
+=============
+-- http://devgirl.org/2014/07/22/mixing-cordova-phonegap-components-with-nativ/#part1
