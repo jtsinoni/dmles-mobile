@@ -1,5 +1,8 @@
 MQTT 
 
+Location:
+	-- /Users/johntsinonis/Documents/workspace/apache-artemis-1.4.0/bin/dml-es-mobile/bin
+
 Subscribe to channel 'hello' on one terminal
 	mqtt sub -t 'hello' -h 'test.mosquitto.org' -v
 
