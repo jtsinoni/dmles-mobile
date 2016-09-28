@@ -16,6 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+//var app = angular.module('dmles-mobile-app', ['ngRoute','ui.bootstrap']);
+var dmlesMobileApp = angular.module("dmles-mobile-app", []);
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -47,5 +50,3 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-
-app.initialize();
