@@ -1,0 +1,36 @@
+<form>
+    <div>
+        <div class="form-group">
+            <label class="control-label" for="host">Host</label>
+            <input type="text" class="form-control" id="host" ng-model="host"  />
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="port">Port</label>
+            <input type="text" class="form-control" id="port" ng-model="port"  />
+        </div>
+        <button ng-click="connect()" id="connect" class="btn btn-primary">Connect</button>
+        <button ng-click="disconnect()" id="disconnect" class="btn btn-danger disabled" disabled>Disconnect</button>
+    </div>
+    <hr />
+    <div class="form-group">
+        <button ng-click="subscribe()" id="subscribe" class="btn btn-success disabled" disabled>Subscribe to Topic</button>
+        <div>
+            <input type="text" class="form-control" id="subscribe-topic" ng-model="topic"  />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button ng-click="publish()" id="publish" class="btn btn-success disabled" disabled>Publish to Topic</button>
+        <div>
+            <textarea class="form-control" id="send-message-topic" name="message" ng-model="message" rows="3"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Messages</label>
+        <button class="btn btn-link" ng-click="clearMessageArea()">Clear</button>
+        <div>
+            <textarea id="messages" class="form-control" ng-model="messages" rows="3" readonly></textarea>
+        </div>
+    </div>
+</form>
