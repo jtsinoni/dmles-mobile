@@ -2,4 +2,5 @@
 /.idea
 /platforms
 /plugins
-/.DS_Store
+/jspm_packages
+**/.DS_Store

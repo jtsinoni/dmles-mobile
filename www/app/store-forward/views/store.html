@@ -1,1 +1,16 @@
 <div><h1>Data that is stored</h1></div>
+<br />
+<a href="#/">Back</a>
+<button ng-click="deleteAll()" id="delete" class="btn btn-danger">Delete All Rows</button>
+<div>
+    <table class="table table-bordered">
+        <tbody>
+        <tr ng-repeat="item in items">
+            <td>{{item.id}}</td>
+            <td>{{item.message}}</td>
+            <td><a ng-click="delete($index, item)">Delete</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+

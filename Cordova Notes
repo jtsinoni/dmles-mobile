@@ -34,6 +34,7 @@ $ cordova emulate android  // use emulator
 $ cordova emulate ios  // use emulator
 
 $ cordova run android  // test app directly
+$ cordova run ios --device
 
 Plugman
 ========

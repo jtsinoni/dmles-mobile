@@ -1,4 +1,4 @@
-dmlesMobileApp.controller('mqttController', function($scope, mqttService) {
+dmlesMobileApp.controller('mqttController', function($scope, mqttService, databaseService) {
     $scope.topic = "mqtt/demo";
     $scope.message = "Hello World!";
     $scope.messages = "";
@@ -51,6 +51,16 @@ dmlesMobileApp.controller('mqttController', function($scope, mqttService) {
     $scope.publish = function() {
         mqttService.publish($scope.client, $scope.topic, $scope.message);
         $scope.messages = $scope.messages + "Published message to Topic: " + $scope.message + "\n";
+
+        var data = {"message": $scope.message};
+        databaseService.add(data)
+            .then(function (id){
+                console.log("row added with id: " + id);
+            })
+            .catch(function (err) {
+                console.error("Failed to add item: " + err);
+                throw err; // Re-throw the error!
+            });
     }
 
     $scope.disconnect = function() {

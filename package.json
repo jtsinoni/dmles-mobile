@@ -1,0 +1,16 @@
+{
+  "jspm": {
+    "registry": "npm",
+    "configFile": "jspm.config.js",
+    "dependencies": {
+      "dexie": "^2.0.0-beta",
+      "ng-dexie": "^0.0.18"
+    },
+    "devDependencies": {
+      "gulp": "^3.9.1"
+    }
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
