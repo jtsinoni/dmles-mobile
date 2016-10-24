@@ -9,7 +9,7 @@
             <label class="control-label" for="port">Port</label>
             <input type="text" class="form-control" id="port" ng-model="port"  />
         </div>
-        <button ng-click="connect()" id="connect" class="btn btn-primary">Connect</button>
+        <button ng-click="connect()" id="connect" class="btn btn-primary disabled" disabled>Connect</button>
         <button ng-click="disconnect()" id="disconnect" class="btn btn-danger disabled" disabled>Disconnect</button>
     </div>
     <hr />
@@ -21,7 +21,7 @@
     </div>
 
     <div class="form-group">
-        <button ng-click="publish()" id="publish" class="btn btn-success disabled" disabled>Publish to Topic</button>
+        <button ng-click="publish()" id="publish" class="btn btn-success">Publish to Topic</button>
         <div>
             <textarea class="form-control" id="send-message-topic" name="message" ng-model="message" rows="3"></textarea>
         </div>

@@ -14,14 +14,14 @@ dmlesMobileApp.run(function($rootScope){
     function onOnline() {
         $rootScope.$apply(function(){
             console.log("just got online event");
-            $rootScope.noNetwork = false;
+            $rootScope.online = true;
         });
     }
 
     function onOffline() {
         $rootScope.$apply(function(){
             console.log("just got offline event");
-            $rootScope.noNetwork = true;
+            $rootScope.online = false;
         });
     }
 });

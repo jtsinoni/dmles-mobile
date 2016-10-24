@@ -17,4 +17,8 @@ dmlesMobileApp.service('mqttService', function() {
         client.end();
         console.log('client disconnected from topic');
     }
+
+    this.connected = function(client) {
+        return client.connected;
+    }
 });
