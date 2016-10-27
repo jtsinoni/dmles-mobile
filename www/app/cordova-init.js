@@ -9,17 +9,6 @@ var CordovaInit = function() {
     var receivedEvent = function() {
         console.log('Start event received, bootstrapping application setup.');
         angular.bootstrap($('body'), ['dmles-mobile-app']);
-
-        //var dmlesMobileAppModule = angular.module('dmles-mobile-app');
-        //var dmlesMobileAppController = dmlesMobileAppModule.controller('mqttController').scope();
-
-        //var messages = angular.element('#messages');
-        //alert(messages);
-        //messages.val('Start event received, bootstrapping application setup.');
-        //var messages = dmlesMobileAppController.messages;
-        //alert(dmlesMobileAppController)
-        //messages = 'Start event received, bootstrapping application setup.';
-
     };
 
     this.bindEvents = function() {

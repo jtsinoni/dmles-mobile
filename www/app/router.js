@@ -7,7 +7,7 @@ dmlesMobileApp.constant('dexie', 'window.Dexie');
  * online and offline callbacks are triggered
  * from cordova's cordova-plugin-network-information plugin
  */
-dmlesMobileApp.run(function($rootScope){
+dmlesMobileApp.run(function($rootScope, connectivityService){
     document.addEventListener("online", onOnline, false);
     document.addEventListener("offline", onOffline, false);
 
@@ -25,12 +25,12 @@ dmlesMobileApp.run(function($rootScope){
         });
     }
 });
-//document.addEventListener("offline", onOffline, false);
 
 dmlesMobileApp.config(function ($routeProvider) {
      $routeProvider
          .when('/', {
              templateUrl: 'app/mqtt/views/mqtt.html',
+             controllerAs: 'vm',
              controller: 'mqttController'
          }).
          when('/store', {

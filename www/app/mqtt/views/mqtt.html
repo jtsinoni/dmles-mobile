@@ -2,35 +2,36 @@
     <div>
         <div class="form-group">
             <label class="control-label" for="host">Host</label>
-            <input type="text" class="form-control" id="host" ng-model="host"  />
+            <input type="text" class="form-control" id="host" ng-model="vm.data.host"  />
         </div>
 
         <div class="form-group">
             <label class="control-label" for="port">Port</label>
-            <input type="text" class="form-control" id="port" ng-model="port"  />
+            <input type="text" class="form-control" id="port" ng-model="vm.data.port"  />
         </div>
-        <button ng-click="connect()" id="connect" class="btn btn-primary disabled" disabled>Connect</button>
-        <button ng-click="disconnect()" id="disconnect" class="btn btn-danger disabled" disabled>Disconnect</button>
+        <button ng-click="vm.connect()" id="connect" class="btn btn-primary disabled" disabled>Connect</button>
+        <button ng-click="vm.disconnect()" id="disconnect" class="btn btn-danger disabled" disabled>Disconnect</button>
     </div>
     <hr />
     <div class="form-group">
-        <button ng-click="subscribe()" id="subscribe" class="btn btn-success disabled" disabled>Subscribe to Topic</button>
+        <button ng-click="vm.subscribe()" id="subscribe" class="btn btn-success disabled" disabled>Subscribe to Topic</button>
+        <button ng-click="vm.unsubscribe()" id="unsubscribe" class="btn btn-success disabled" disabled>Unsubscribe from Topic</button>
         <div>
-            <input type="text" class="form-control" id="subscribe-topic" ng-model="topic"  />
+            <input type="text" class="form-control" id="subscribe-topic" ng-model="vm.data.topic"  />
         </div>
     </div>
 
     <div class="form-group">
-        <button ng-click="publish()" id="publish" class="btn btn-success">Publish to Topic</button>
+        <button ng-click="vm.publish()" id="publish" class="btn btn-success">Publish to Topic</button>
         <div>
-            <textarea class="form-control" id="send-message-topic" name="message" ng-model="message" rows="3"></textarea>
+            <textarea class="form-control" id="send-message-topic" name="message" ng-model="vm.data.message" rows="3"></textarea>
         </div>
     </div>
     <div class="form-group">
         <label class="control-label">Messages</label>
-        <button class="btn btn-link" ng-click="clearMessageArea()">Clear</button>
+        <button class="btn btn-link" ng-click="vm.clearMessageArea()">Clear</button>
         <div>
-            <textarea id="messages" class="form-control" ng-model="messages" rows="3" readonly></textarea>
+            <textarea id="messages" class="form-control" ng-model="vm.data.messages" rows="3" readonly></textarea>
         </div>
     </div>
     <div>
