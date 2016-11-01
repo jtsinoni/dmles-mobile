@@ -1,2 +1,13 @@
-<div><h1>Data that should be forward to upstream service</h1></div>
+<div><h1>Data that has been forwarded to upstream service</h1></div>
+<br />
 <a href="#/">Back</a>
+<div>
+    <table class="table table-bordered">
+        <tbody>
+        <tr ng-repeat="item in vm.items">
+            <td>{{item.id}}</td>
+            <td>{{item.message}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

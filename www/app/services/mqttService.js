@@ -14,7 +14,7 @@ dmlesMobileApp.service('mqttService', function() {
     }
 
     this.subscribe = function(client, topic) {
-        client.subscribe(topic, function(err, granted) {
+        client.subscribe(topic, {qos: 1}, function(err, granted) {
             if(err) {
                 console.error(err);
             } else {
@@ -36,7 +36,7 @@ dmlesMobileApp.service('mqttService', function() {
     }
 
     this.publish = function(client, topic, message) {
-        client.publish(topic, message, {qos: 2}, function(err) {
+        client.publish(topic, message, {qos: 1}, function(err) {
             if(err) {
                 console.error(err);
             } else {

@@ -39,7 +39,9 @@ dmlesMobileApp.config(function ($routeProvider) {
              controller: 'storeController'
          }).
          when('/forward', {
-             templateUrl: 'app/store-forward/views/forward.html'
+             templateUrl: 'app/store-forward/views/forward.html',
+             controllerAs: 'vm',
+             controller: 'forwardController'
          })
          .otherwise({
              redirectTo: '/'

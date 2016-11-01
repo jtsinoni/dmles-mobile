@@ -9,21 +9,9 @@ dmlesMobileApp.controller('mqttController', function($scope, mqttService, databa
 
             // Store data offline
             vm.publish = function() {
-                var data = {"message": vm.data.message};
-                databaseService.add(data)
-                    .then(function (id){
-                        var textMessage = "Row added with id: " + id;
-                        $scope.$apply(function () {
-                            appendMessage(textMessage);
-                        });
-                        console.log(textMessage);
-                    })
-                    .catch(function (err) {
-                        var textMessage = "Failed to add item: " + err
-                        console.error(textMessage);
-
-                        throw err; // Re-throw the error
-                    });
+                var message = {"message": vm.data.message};
+                var params = {$scope: $scope, message: message, appendMessage: appendMessage};
+                syncService.add(params);
             }
         } else {  // Online
             // Offload local changes
@@ -39,9 +27,6 @@ dmlesMobileApp.controller('mqttController', function($scope, mqttService, databa
                     appendMessage("Published message to topic: " + vm.data.topic + ", message:" + vm.data.message);
                 }
 
-                //offload any local storage
-                //syncService.pushLocalChanges();
-
             } else {
                 toggleButtons(['#connect'], true);
                 toggleButtons(['#disconnect', '#subscribe', '#unsubscribe'], false);
@@ -52,8 +37,8 @@ dmlesMobileApp.controller('mqttController', function($scope, mqttService, databa
             }
         }
 
-        console.log('New Values: ' + newValues[0], newValues[1]);
-        console.log('Old Values: ' + oldValues[0], oldValues[1]);
+        // console.log('New Values: ' + newValues[0], newValues[1]);
+        // console.log('Old Values: ' + oldValues[0], oldValues[1]);
     });
 
     vm.connect = function () {
@@ -143,13 +128,11 @@ dmlesMobileApp.controller('mqttController', function($scope, mqttService, databa
             for (var id in ids) {
                 $(ids[id]).removeClass("disabled");
                 $(ids[id]).prop('disabled', !on);
-                //console.log("id: " + id + " on: " + on + " ids" + ids);
             }
         } else {
             for (var id in ids) {
                 $(ids[id]).addClass("disabled");
                 $(ids[id]).prop('disabled', !on);
-                //console.log("id: " + id + " on: " + on + " ids" + ids);
             }
         }
     }
